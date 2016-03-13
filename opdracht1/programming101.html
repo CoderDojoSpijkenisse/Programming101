@@ -88,7 +88,7 @@
         replace('f_hobbies', r); ok(1, 4);
       }
       // Check the champion vraag
-      if (typeof(champion) == "string") { replace('f_champion', champion); ok(1, 5) }
+      if (typeof(champion) == "string" && champion == 'Niels') { replace('f_champion', champion); ok(1, 5) }
 
       console.log(check(1));
 
