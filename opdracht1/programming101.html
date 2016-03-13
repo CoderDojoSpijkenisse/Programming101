@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>Programming 101 - CoderDojo Spijkenisse</title>
+    <style>
+      html {
+          font-family: 'Segoe UI', sans-serif;
+      }
+      .field {
+        color: red;
+        font-family: monospace;
+      }
+      .complete {
+        color: #00E208;
+      }
+      .hide {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Ninja Profiel</h1>
+
+    <h2>Opdracht 1</h2>
+    <p>
+      Mijn naam is <span id="f_naam" class="field">[naam]</span>.
+      Ik ben <span id="f_leeftijd" class="field">[leeftijd]</span> jaar oud.<br/>
+      Er zijn <span id="f_ninjas" class="field">[ninjas]</span> ninja's aanwezig bij de dojo.<br/>
+
+      Mijn hobbies zijn:
+      <ul id="f_hobbies">
+      </ul>
+
+      De champion van CoderDojo Spijkenisse is <span id="f_champion" class="field">[champion]</span>.
+    </p>
+
+    <h4>Controle</h4>
+    <ul>
+      <li><span class="complete hide" id="1_1_ok">[OK]</span> <b>Naam</b> <span id="1_1">Je hebt nog geen variabele gemaakt voor je naam</span></li>
+      <li><span class="complete hide" id="1_2_ok">[OK]</span> <b>Leeftijd</b> <span id="1_2">Je hebt nog geen variabele gemaakt voor je leeftijd</span></li>
+      <li><span class="complete hide" id="1_3_ok">[OK]</span> <b>Ninja's</b> <span id="1_3">Je hebt nog geen variabele gemaakt voor je ninjas of de waarde klopt niet!</span></li>
+      <li><span class="complete hide" id="1_4_ok">[OK]</span> <b>Hobbies</b> <span id="1_4">Je hebt nog geen variabele gemaakt voor hobbies of er is iets mis mee!</span></li>
+      <li><span class="complete hide" id="1_5_ok">[OK]</span> <b>Champion</b> <span id="1_5">Je hebt nog geen variabele gemaakt voor champion!</span></li>
+    </ul>
+    <span id="opdracht1">Je hebt de opdracht nog niet af. Kijk hierboven wat je nog mist!</span><br/>
+    <span id="opdracht1_ok" class="complete"><img src="http://shannenkoning.nl/wp-content/uploads/2015/12/Check2.0.png" style="height: 25px"/> Goed zo! Je hebt de opdracht gehaald!</span>
+
+    <script src="programming101.js"></script>
+    <script>
+      // jQuery alike helper functie.
+      function $(elem) { return document.getElementById(elem); }
+      // Vervang de waarde van de <span> als de variabele goed is ingesteld.
+      function replace(field, value) { if (value !== "undefined") {
+        var f = $(field);
+        f.innerHTML = value;
+        f.className = "complete";
+      } }
+
+      var opdrachten = [
+        [false, false, false, false, false] // Opdracht 1
+      ];
+      // Vink een opdracht af
+      function ok(x, y) {
+        opdrachten[x-1][y-1] = true;
+        $(x + '_' + y).style.visibility = "hidden";
+        $(x + '_' + y + '_ok').style.visibility = "visible";
+      }
+      function check(x) {
+        var r = true;
+        for (var y = 0; y < opdrachten[x-1].length; y++) {
+          r = r && opdrachten[x-1][y];
+        }
+        return r;
+      }
+
+      // Opdracht 1
+      // Probeer de naam en leeftijd in te laden
+      if (typeof(naam) != "undefined") { replace('f_naam', naam); ok(1, 1); }
+      if (typeof(leeftijd) != "undefined") { replace('f_leeftijd', leeftijd); ok(1, 2); }
+      // Kijk of het aantal ninjas correct is geteld
+      if (typeof(ninjas) != "undefined" && ninjas == jongens + meisjes) { replace('f_ninjas', ninjas); ok(1, 3); }
+      // Kijk of de hobbies zijn ingevuld
+      if (typeof(hobbies) == "object" && hobbies.length > 0) {
+        var r = "";
+        for (var x = 0; x < hobbies.length; x++) {
+          r += "<li>" + hobbies[x] + "</li>";
+        }
+        replace('f_hobbies', r); ok(1, 4);
+      }
+      // Check the champion vraag
+      if (typeof(champion) == "string") { replace('f_champion', champion); ok(1, 5) }
+
+      console.log(check(1));
+
+      if (check(1)) { $("opdracht1").style.visibility = "hidden"; }
+      else { $("opdracht1_ok").style.visibility = "hidden"; }
+    </script>
+  </body>
+</html>
