@@ -17,7 +17,7 @@ var meisjes = 0;
 // Maak een variabele met de naam 'hobbies' en zet hierin een lijst met je hobbies
 
 
-// Dit is een lijst met allemaal namen
+// Dit is een lijst (array) met allemaal namen
 //             0       1        2        3          4         5      6
 var namen = ['Henk', 'Piet', 'Niels', 'Klaas', 'Annemieke', 'Tim', 'Paul'];
 // Maak een variabele met de naam 'champion' en zet daarin de naam van de champion van deze dojo
