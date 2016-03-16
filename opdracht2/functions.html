@@ -1,0 +1,53 @@
+<html>
+<head>
+	<!-- Standaard stijlen van Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+	<title>Programming 101 - CoderDojo Spijkenisse</title>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Opdracht 2 - Functies / methodes</h1>
+		<hr/>
+		<h2>De console</h2>
+		<p>Als je wilt testen is de console onmisbaar. </p>
+
+		<blockquote>
+			Open de console (vraag een van de mentoren eventueel om hulp).
+		</blockquote>
+
+		<p>Als dit is gelukt kun je op <a class="btn btn-xs btn-success" onclick="testNaarDeConsole()">deze knop</a> klikken. Er zou dan een melding moeten verschijnen in de console.</p>
+		<p>We gaan nu een <b>functie</b> schrijven waarmee je iets in de console kunt laten verschijnen.</p>
+
+		<a name="mijnConsoleLink"></a>
+		<blockquote>
+			Maak in <code>functions.js</code> een nieuwe functie aan. Deze functie noem je <code>mijnConsoleTest</code>. Schrijf de code om je naam in de console te laten verschijnen.<br/>
+			Sla je code op en laad de pagina opnieuw met de knop hiernaast: <a class="btn btn-xs btn-danger" onclick="laadJavascriptBestand('mijnConsoleTest')">Code laden</a>.<br/>
+			Klik nu op de knop hiernaast: <a class="btn btn-xs btn-success">Testen</a>. Als het goed is verschijnt je naam in de console. Zo niet, probeer het dan opnieuw, klik weer op 'Code laden' en vervolgens weer op 'Testen'.
+		</blockquote>
+
+		<hr/>
+
+		<a name="verdubbel"></a>
+		<h2>Je eerste functies</h2>
+		Laten we beginnen. Eerst gaan we een functie maken die <b>een getal verdubbelt</b>.
+		<blockquote class="form-inline">
+			<p>Schrijf een functie met de naam <code>verdubbel</code>. De functie krijg 1 <b>parameter</b>. De functie moet het getal verdubbelen en het antwoorden <b>return</b>'en.</p>
+			<a class="btn btn-xs btn-danger" onclick="laadJavascriptBestand('verdubbel')">Code laden</a> <a class="btn btn-xs btn-success" onclick="testVerdubbel()">Testen</a><br/>
+			Je kunt de functie ook testen met een eigen getal, probeer maar: <input type="text" id="f_verdubbel" class="form-control" placeholder="getal"> <a class="btn btn-xs btn-success" onclick="testVerdubbelInput()">Test</a>
+		</blockquote>
+
+		Ok&eacute;. Laten we nu wat anders proberen. We gaan nu een functie maken om de prijs van een onbekend aantal bioscoopkaartjes te bepalen.
+		<a name="bioscoop"></a>
+		<blockquote class="form-inline">
+			<p>Schrijf een functie met de naam <code>prijsKaartjes</code>. Deze functies krijgt 2 <b>parameters</b>, namelijk de prijs van een kaartje, en het aantal personen. Kies duidelijke namen voor je parameters! Bereken hoeveel iemand in totaal moet betalen.</p>
+			<a class="btn btn-xs btn-danger" onclick="laadJavascriptBestand('bioscoop')">Code laden</a> <a class="btn btn-xs btn-success" onclick="testBios()">Testen</a><br/>
+		</blockquote>
+
+	</div>
+	<script src="functions.js"></script>
+	<script src="coderdojo_lib.js"></script>
+</body>
+</html>

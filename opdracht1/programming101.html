@@ -1,24 +1,29 @@
 <html>
-  <head>
-    <title>Programming 101 - CoderDojo Spijkenisse</title>
-    <style>
-      html {
-          font-family: 'Segoe UI', sans-serif;
-      }
-      .field {
-        color: red;
-        font-family: monospace;
-      }
-      .complete {
-        color: #00E208;
-      }
-      .hide {
-        visibility: hidden;
-      }
-    </style>
-  </head>
+<head>
+  <!-- Standaard stijlen van Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
-  <body>
+  <title>Programming 101 - CoderDojo Spijkenisse</title>
+  <style>
+    html {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .field {
+      color: red;
+      font-family: monospace;
+    }
+    .complete {
+      color: #00E208;
+    }
+    .hide {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
     <h1>Ninja Profiel</h1>
 
     <h2>Opdracht 1</h2>
@@ -34,19 +39,22 @@
       De champion van CoderDojo Spijkenisse is <span id="f_champion" class="field">[champion]</span>.
     </p>
 
-    <h4>Controle</h4>
-    <ul>
-      <li><span class="complete hide" id="1_1_ok">[OK]</span> <b>Naam</b> <span id="1_1">Je hebt nog geen variabele gemaakt voor je naam</span></li>
-      <li><span class="complete hide" id="1_2_ok">[OK]</span> <b>Leeftijd</b> <span id="1_2">Je hebt nog geen variabele gemaakt voor je leeftijd</span></li>
-      <li><span class="complete hide" id="1_3_ok">[OK]</span> <b>Ninja's</b> <span id="1_3">Je hebt nog geen variabele gemaakt voor je ninjas of de waarde klopt niet!</span></li>
-      <li><span class="complete hide" id="1_4_ok">[OK]</span> <b>Hobbies</b> <span id="1_4">Je hebt nog geen variabele gemaakt voor hobbies of er is iets mis mee!</span></li>
-      <li><span class="complete hide" id="1_5_ok">[OK]</span> <b>Champion</b> <span id="1_5">Je hebt nog geen variabele gemaakt voor champion!</span></li>
-    </ul>
-    <span id="opdracht1">Je hebt de opdracht nog niet af. Kijk hierboven wat je nog mist!</span><br/>
-    <span id="opdracht1_ok" class="complete"><img src="http://shannenkoning.nl/wp-content/uploads/2015/12/Check2.0.png" style="height: 25px"/> Goed zo! Je hebt de opdracht gehaald!</span>
+    <div class="well">
+      <h4>Controle</h4>
+      <ul>
+        <li><span class="complete hide" id="1_1_ok">[OK]</span> <b>Naam</b> <span id="1_1">Je hebt nog geen variabele gemaakt voor je naam</span></li>
+        <li><span class="complete hide" id="1_2_ok">[OK]</span> <b>Leeftijd</b> <span id="1_2">Je hebt nog geen variabele gemaakt voor je leeftijd</span></li>
+        <li><span class="complete hide" id="1_3_ok">[OK]</span> <b>Ninja's</b> <span id="1_3">Je hebt nog geen variabele gemaakt voor je ninjas of de waarde klopt niet!</span></li>
+        <li><span class="complete hide" id="1_4_ok">[OK]</span> <b>Hobbies</b> <span id="1_4">Je hebt nog geen variabele gemaakt voor hobbies of er is iets mis mee!</span></li>
+        <li><span class="complete hide" id="1_5_ok">[OK]</span> <b>Champion</b> <span id="1_5">Je hebt nog geen variabele gemaakt voor champion!</span></li>
+      </ul>
+      <span id="opdracht1">Je hebt de opdracht nog niet af. Kijk hierboven wat je nog mist! <a class="btn btn-xs btn-info" onclick="location.reload();"><i class="glyphicon glyphicon-chevron-right"></i> Controleer opnieuw</a></span><br/>
+      <span id="opdracht1_ok" class="complete"><img src="http://shannenkoning.nl/wp-content/uploads/2015/12/Check2.0.png" style="height: 25px"/> Goed zo! Je hebt de opdracht gehaald!</span>
+    </div>
+  </div>
 
-    <script src="programming101.js"></script>
-    <script>
+  <script src="programming101.js"></script>
+  <script>
       // jQuery alike helper functie.
       function $(elem) { return document.getElementById(elem); }
       // Vervang de waarde van de <span> als de variabele goed is ingesteld.
@@ -58,7 +66,7 @@
 
       var opdrachten = [
         [false, false, false, false, false] // Opdracht 1
-      ];
+        ];
       // Vink een opdracht af
       function ok(x, y) {
         opdrachten[x-1][y-1] = true;
@@ -73,27 +81,28 @@
         return r;
       }
 
-      // Opdracht 1
-      // Probeer de naam en leeftijd in te laden
-      if (typeof(naam) != "undefined") { replace('f_naam', naam); ok(1, 1); }
-      if (typeof(leeftijd) != "undefined") { replace('f_leeftijd', leeftijd); ok(1, 2); }
-      // Kijk of het aantal ninjas correct is geteld
-      if (typeof(ninjas) != "undefined" && ninjas == jongens + meisjes) { replace('f_ninjas', ninjas); ok(1, 3); }
-      // Kijk of de hobbies zijn ingevuld
-      if (typeof(hobbies) == "object" && hobbies.length > 0) {
-        var r = "";
-        for (var x = 0; x < hobbies.length; x++) {
-          r += "<li>" + hobbies[x] + "</li>";
+      function controleer() {
+        // Opdracht 1
+        // Probeer de naam en leeftijd in te laden
+        if (typeof(naam) != "undefined") { replace('f_naam', naam); ok(1, 1); }
+        if (typeof(leeftijd) != "undefined") { replace('f_leeftijd', leeftijd); ok(1, 2); }
+        // Kijk of het aantal ninjas correct is geteld
+        if (typeof(ninjas) != "undefined" && ninjas == jongens + meisjes) { replace('f_ninjas', ninjas); ok(1, 3); }
+        // Kijk of de hobbies zijn ingevuld
+        if (typeof(hobbies) == "object" && hobbies.length > 0) {
+          var r = "";
+          for (var x = 0; x < hobbies.length; x++) {
+            r += "<li>" + hobbies[x] + "</li>";
+          }
+          replace('f_hobbies', r); ok(1, 4);
         }
-        replace('f_hobbies', r); ok(1, 4);
+        // Check the champion vraag
+        if (typeof(champion) == "string" && champion == 'Niels') { replace('f_champion', champion); ok(1, 5) }
+
+        if (check(1)) { $("opdracht1").style.visibility = "hidden"; }
+        else { $("opdracht1_ok").style.visibility = "hidden"; }
       }
-      // Check the champion vraag
-      if (typeof(champion) == "string" && champion == 'Niels') { replace('f_champion', champion); ok(1, 5) }
-
-      console.log(check(1));
-
-      if (check(1)) { $("opdracht1").style.visibility = "hidden"; }
-      else { $("opdracht1_ok").style.visibility = "hidden"; }
+      controleer();
     </script>
   </body>
 </html>
