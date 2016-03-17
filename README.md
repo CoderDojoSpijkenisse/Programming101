@@ -33,7 +33,7 @@ LET OP: Soms verschillen de operatoren per programmeertaal.
 | Operator           | Betekenis                                                                    |
 |--------------------|------------------------------------------------------------------------------|
 | `a == b`           | `a` is gelijk aan `b` (geeft een boolean terug)                              |
-| `a != b`           | `a` is gelijk aan `b` (geeft een boolean terug)                              |
+| `a != b`           | `a` is niet gelijk aan `b` (geeft een boolean terug)                              |
 | `a >= b`           | `a` is groter dan of  gelijk aan `b` (geeft een boolean terug)               |
 | `a >  b`           | `a` is groter dan `b` (geeft een boolean terug)                              |
 | `a <  b`           | `a` is kleiner dan `b` (geeft een boolean terug)                             |
