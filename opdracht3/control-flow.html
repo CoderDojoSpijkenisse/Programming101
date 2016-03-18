@@ -1,0 +1,65 @@
+<html>
+<head>
+	<!-- Standaard stijlen van Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+	<title>Programming 101 - CoderDojo Spijkenisse</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Opdracht 3 - Control Flow</h1>
+
+		<h2>If-else-test</h2>
+		<p>Soms wil je bepaalde code alleen maar uitvoeren onder bepaalde omstandigheden. In zo'n geval kun je een test doen, en als die test geslaagd is kun je code uitvoeren, of juist niet.</p>
+
+		<p>Zo'n test ziet er als volgt uit; <code>if (..een test..) { ... jouw code hier ... }</code></p>
+
+		<blockquote>We willen het alarm van een bedrijf alleen uitzetten als iemand de juiste code intoetst. Schrijf een functie met de naam <code>schakelAlarmUit</code>. Bedenk zelf een code om het alarm uit te zetten. Als het alarm is uitgeschakeld, print dan <code>Alarm uit!</code> op de console. Print anders <code>Foute code!</code> op de console.</blockquote>
+
+		<h2>Uitgebreide if-else</h2>
+		<blockquote>Schrijf een functie met de naam <code>vergelijken</code>. De functie krijgt twee getallen binnen. We gaan het eerste getal vergelijken met het tweede getal. Als het eerste getal <i>kleiner</i> is dan het tweede getal, print dan <code>Kleiner!</code> naar de conole. Als de getallen even groot zijn, dan print je <code>Even groot!</code>, en anders print je <code>Groter!</code></blockquote>
+
+		<hr/>
+
+		<h2>De achtbaan</h2>
+
+		<a name="achtbaan"></a>
+		<table class="table">
+			<thead>
+				<tr><th>Kar 0</th><th>Kar 1</th><th>Kar 2</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<a class="btn btn-small btn-danger" id="kar0_knop" onclick="beugel(0)">Beugel</a>
+					</td>
+					<td>
+						<a class="btn btn-small btn-danger" id="kar1_knop" onclick="beugel(1)">Beugel</a>
+					</td>
+					<td>
+						<a class="btn btn-small btn-danger" id="kar2_knop" onclick="beugel(2)">Beugel</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						Alles klaar? <a class="btn btn-danger" id="achtbaan_knop">GO</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<blockquote>Een achtbaan moet veilig zijn. Daarom moeten eerst alle beugels dicht zijn voordat de trein wegkan. Kijk in <code>control-flow.js</code>. In dit bestand moet je een paar functies maken.</blockquote>
+
+		We gaan er stap voor stap doorheen. De <b>variabele</b> <code>trein</code> is een lijst met drie <b>boolean</b>s. Elk karretje heeft een eigen boolean. Als de boolean <code>true</code> is, dan is de beugel <b>dicht</b>. Als de boolean <code>false</code> is, dan is de beugel <b>open</b>.
+
+		<blockquote>Eerst maken we de functie met de naam <code>beugel</code>. De bediener van de achtbaan moet de beugels open en dicht kunnen doen. Zorg dat de functie controleert of de beugel open of dicht is. Als de beugel open is, dan moet hij dicht gaan, en als hij dicht is, dan moet hij juist open. Je kunt hiervoor <code>doeBeugelOpen()</code> en <code>doeBeugelDicht()</code> gebruiken.</blockquote>
+
+		Nu kunnen we de beugels bedienen. Nu moeten we nog controleren wanneer alle beugels dicht zijn.
+
+		<blockquote>Gebruik hiervoor de functie <code>controleerAlleBeugels</code>. Als alle beugels dicht zijn mag het licht op groen, anders moet het licht op rood. (Gebruik <code>zetLichtOpGroen</code> en <code>zetLichtOpRood</code>)</blockquote>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+	<script src="control-flow.js"></script>
+</body>
+</html>

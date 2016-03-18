@@ -21,4 +21,5 @@ function laadJavascriptBestand(locatie) {
 // Schrijf hieronder de functie verdubbel
 function verdubbel(x) { return 2*x; }
 
-// 
+// Schrijf hieronder de functie prijsKaartjes
+function prijsKaartjes(x, y) { return x * y; }

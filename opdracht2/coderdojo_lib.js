@@ -23,4 +23,12 @@ function testBios() {
 	if (typeof(prijsKaartjes) === "undefined") { console.error('De functie prijsKaartjes bestaat niet!'); return; }
 
 	var testdata = [[4, 7.00], [2, 10.50], [3, 4.75], [20, 5.00]];
+
+	for (var x = 0; x < testdata.length; x++) {
+		if (testdata[x][0] * testdata[x][1] == prijsKaartjes(testdata[x][0], testdata[x][1])) {
+			console.log(testdata[x][0] + ' personen betalen in toaal ' + prijsKaartjes(testdata[x][0], testdata[x][1]));
+		} else {
+			console.warn('De prijs klopt niet voor ' + testdata[x][0] + ' personen voor kaartjes van ' + testdata[x][1] + ' per stuk. De prijs is niet ' + prijsKaartjes(testdata[x][0], testdata[x][1]));
+		}
+	}
 }
